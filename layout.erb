@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LAB WEEK 2</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+</head>
+<body>
+  <h1>Total Revenue</h1>
+  <p>
+    <%= totalrevenue %>
+  </p>
+
+
+   <table class="table">
+   <tr>
+     <th>Destination</th>
+     <th>Shipment</th>
+     <th>Crates</th>
+     <th>Money</th>
+   </tr>
+   <% shipments.each do |shpmt_hash| %>
+   <tr>
+     <td><%= shpmt_hash["Destination"] %> </td>
+     <td><%= shpmt_hash["Shipment"] %> </td>
+     <td><%= shpmt_hash["Crates"] %> </td>
+     <td><%= shpmt_hash["Money"] %> </td>
+
+   </tr>
+   <%end%>
+ </table>
+
+ <table class="table">
+ <tr>
+   <th>Name</th>
+   <th>Trips</th>
+   <th>Bonus</th>
+ </tr>
+
+ <tr>
+   <td>Fry </td>
+   <td> <%= trip_counter_fry %> </td>
+   <td> <%= bonus_fry %> </td>
+
+ </tr>
+
+ <tr>
+   <td>Amy </td>
+   <td> <%= trip_counter_amy %> </td>
+   <td> <%= bonus_amy %> </td>
+
+ </tr>
+ <tr>
+   <td>Bender </td>
+   <td> <%= trip_counter_bender %> </td>
+   <td> <%= bonus_bender %> </td>
+
+ </tr>
+
+ <tr>
+   <td>Leela </td>
+   <td> <%= trip_counter_leela %> </td>
+   <td> <%= bonus_leela %> </td>
+
+ </tr>
+
+</table>
+
+<p>
+  <br><br><br><br>
+</p>
+
+<table class="table">
+  <tr>
+    <%planet_list.first.each do |key, val|%>
+    <th><%=key%> </th>
+    <%end%>
+  </tr>
+
+  <%planet_list.each do |planet| %>
+  <tr>
+    <td> <%=planet["name"]%>   </td>
+    <td> <%=planet["revenue"]%>   </td>
+  </tr>
+  <%end%>
+</table>
+
+
+</body>
+</html>
